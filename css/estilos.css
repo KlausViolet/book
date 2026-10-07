@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Lato:wght@400;700&display=swap');
+
+:root{
+/* Colores (sacados del CV) */
+    --negro:#000;
+    --noche:#14172e;
+    --lila:#7a5aa0;
+    --lila-claro:#b9a1d6;
+    --rosa:#e6a0c8;
+    --bg-color:#ececf0;
+/* Fuentes */
+    --cursiva:"Great Vibes", cursive;
+    --elegante:"Cormorant Garamond", serif;
+    --main-font:"Lato", sans-serif;
+}
+*{
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(60% 50% at 95% 15%, rgba(185,161,214,.55), transparent 70%),
+        radial-gradient(55% 45% at 0% 85%, rgba(230,160,200,.45), transparent 70%);
+    background-attachment: fixed;
+    color: var(--noche);
+    font-family: var(--main-font);
+    line-height: 1.5;
+}
+img{
+    max-width: 100%;
+}
+section{
+    scroll-margin-top: 5em;
+}
+a:focus-visible,
+button:focus-visible{
+    outline: 3px solid var(--lila);
+    outline-offset: 3px;
+}
+
+/* ---------- Encabezado ---------- */
+header{
+    align-items: center;
+    background: rgba(236,236,240,.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(122,90,160,.25);
+    display: flex;
+    height: 4.5em;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+header h1 a{
+    color: var(--noche);
+    font-family: var(--cursiva);
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+header nav ul{
+    align-items: center;
+    display: flex;
+    gap: 2em;
+    list-style: none;
+}
+header nav a{
+    color: var(--noche);
+    font-family: var(--elegante);
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+}
+header nav a::after{
+    background: linear-gradient(to right, var(--lila-claro), var(--rosa));
+    bottom: -3px;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    transition: all .25s ease-in-out;
+    width: 0;
+}
+header nav a:hover::after{
+    left: -.5em;
+    width: calc(100% + 1em);
+}
+
+/* ---------- Títulos y frases ---------- */
+h2{
+    color: var(--lila);
+    font-family: var(--cursiva);
+    font-size: 3.4rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: .4em;
+}
+section:not(#inicio){
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 4em 3em;
+}
+section:not(#inicio) blockquote{
+    color: var(--noche);
+    font-family: var(--elegante);
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 1.5em;
+    max-width: 38em;
+}
+
+/* ---------- Inicio ---------- */
+#inicio{
+    align-items: center;
+    display: flex;
+    gap: clamp(2rem, 6vw, 5rem);
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 100vh;
+    padding: 6em 3em 3em;
+}
+/* El arco con tu foto, como en el CV */
+#inicio::before{
+    aspect-ratio: 3 / 4;
+    background: url(../img/profile.png) center top / cover no-repeat, var(--lila-claro);
+    border: 6px solid var(--negro);
+    border-radius: 999px 999px 0 0;
+    content: "";
+    flex: 0 0 auto;
+    outline: 2px solid var(--noche);
+    outline-offset: 10px;
+    width: min(340px, 32vw);
+}
+#inicio .texto{
+    max-width: 34em;
+}
+#inicio h2{
+    color: var(--noche);
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: .95;
+    margin-bottom: .2em;
+}
+.subtitulo{
+    border-bottom: 2px solid var(--noche);
+    color: var(--lila);
+    font-family: var(--elegante);
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 1em;
+    padding-bottom: .3em;
+}
+#inicio .texto p{
+    margin-bottom: 1.2em;
+}
+#inicio .texto ul{
+    margin-top: 1.5em;
+}
+/* Íconos de redes en círculos rosa (sobreescribe los estilos en línea) */
+#inicio .texto ul a{
+    align-items: center;
+    background: var(--rosa);
+    border-radius: 50%;
+    display: flex;
+    height: 44px;
+    justify-content: center;
+    transition: background .15s ease-in-out;
+    width: 44px;
+}
+#inicio .texto ul a:hover{
+    background: var(--lila);
+}
+#inicio .texto ul i{
+    color: var(--noche) !important;
+    font-size: 1.3rem !important;
+}
+#inicio .texto ul a:hover i{
+    color: #fff !important;
+}
+
+/* ---------- Botones ---------- */
+.boton{
+    border-radius: 2em;
+    display: inline-block;
+    font-weight: 700;
+    padding: .75em 1.5em;
+    text-decoration: none;
+    transition: all .15s ease-in-out;
+}
+.boton.btn-primario{
+    background-color: var(--lila);
+    border: 2px solid transparent;
+    color: #fff;
+}
+.boton.btn-primario:hover{
+    background-color: var(--rosa);
+    color: var(--negro);
+}
+.boton.btn-secundario{
+    background: transparent;
+    border: 2px solid var(--rosa);
+    color: var(--rosa);
+}
+.boton.btn-secundario:hover{
+    background: var(--rosa);
+    color: var(--negro);
+}
+
+/* ---------- Tarjetas (panel negro como en el CV) ---------- */
+.cards{
+    display: grid;
+    gap: 2.5em;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 8px;
+}
+.cards.bloque-cards-2{
+    grid-template-columns: repeat(2, 1fr);
+}
+.card{
+    background: var(--negro);
+    border-radius: 1.2em;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid var(--lila-claro);
+    outline-offset: 6px;
+    overflow: hidden;
+}
+.card-imagen{
+    height: 12em;
+    overflow: hidden;
+}
+.card-imagen.card-imagen-alta{
+    height: 18em;
+}
+.card-info{
+    flex-grow: 1;
+    padding: 1.4em 1.2em .8em;
+}
+.card-titulo{
+    color: var(--rosa);
+    font-family: var(--elegante);
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: .5rem;
+}
+.card-fecha{
+    color: var(--lila-claro);
+    font-size: .85rem;
+    margin-bottom: .8rem;
+}
+.card-info p{
+    font-size: .95rem;
+    line-height: 1.4;
+}
+.card > ul{
+    justify-content: center;
+    padding: .5em 1em 1.4em;
+}
+.card > ul i{
+    color: var(--rosa) !important;
+    font-size: 1.5rem !important;
+    transition: color .15s ease-in-out;
+}
+.card > ul a:hover i{
+    color: #fff !important;
+}
+
+/* ---------- Carrusel ---------- */
+.carrusel{
+    margin: 2rem auto;
+    max-width: 1000px;
+    position: relative;
+}
+.carrusel-pista{
+    border-radius: 1.2em;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.carrusel-pista::-webkit-scrollbar{
+    display: none;
+}
+.slide{
+    align-items: center;
+    background: var(--negro);
+    color: #fff;
+    display: grid;
+    flex: 0 0 100%;
+    gap: 2rem;
+    grid-template-columns: 1fr 1.2fr;
+    padding: 2.5rem 2.5rem 0;
+    scroll-snap-align: start;
+}
+.slide img{
+    align-self: end;
+    aspect-ratio: 3 / 4;
+    border-radius: 999px 999px 0 0;
+    margin: 0 auto;
+    object-fit: cover;
+    width: min(100%, 320px);
+}
+.slide-info{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding-bottom: 2.5rem;
+}
+.slide-info h3{
+    color: var(--rosa);
+    font-family: var(--elegante);
+    font-size: 2.2rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.05;
+}
+.slide-fecha{
+    color: var(--lila-claro);
+}
+.slide-info .boton{
+    align-self: flex-start;
+    margin-top: .5rem;
+}
+.carrusel-btn{
+    background: var(--rosa);
+    border-radius: 50%;
+    color: var(--negro);
+    cursor: pointer;
+    font-size: 1.6rem;
+    height: 44px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    z-index: 2;
+}
+.carrusel-btn:hover{
+    background: var(--lila-claro);
+}
+#prev{ left: -22px; }
+#next{ right: -22px; }
+
+/* ---------- Pie ---------- */
+footer{
+    align-items: center;
+    background: var(--negro);
+    color: var(--rosa);
+    display: flex;
+    gap: 1.5em;
+    height: 5em;
+    justify-content: center;
+    padding: 1em;
+}
+footer a{
+    color: var(--lila-claro);
+}
+
+/* ---------- Celulares y tablets verticales ---------- */
+@media (max-width: 700px){
+    body{
+        font-size: 15px;
+    }
+    header{
+        flex-direction: column;
+        gap: .2em;
+        height: 5.5em;
+        justify-content: center;
+    }
+    header h1 a{
+        font-size: 1.8rem;
+    }
+    header nav ul{
+        gap: 1em;
+    }
+    header nav a{
+        font-size: 1.1rem;
+    }
+    h2{
+        font-size: 2.8rem;
+    }
+    section:not(#inicio){
+        padding: 3em 1.2em;
+    }
+    section:not(#inicio) blockquote{
+        font-size: 1.35rem;
+    }
+    #inicio{
+        flex-direction: column;
+        padding: 7.5em 1.5em 2em;
+    }
+    #inicio::before{
+        width: 65vw;
+    }
+    .cards.bloque-cards-2{
+        grid-template-columns: 1fr;
+    }
+    .slide{
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem 0;
+    }
+    .slide img{
+        order: 2;
+        width: min(100%, 260px);
+    }
+    .slide-info{
+        padding-bottom: 0;
+    }
+    #prev{ left: 6px; }
+    #next{ right: 6px; }
+}
+@media (prefers-reduced-motion: reduce){
+    html, .carrusel-pista{
+        scroll-behavior: auto;
+    }
+}
