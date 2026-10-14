@@ -1,27 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Lato:wght@400;700&display=swap');
 
 :root{
-/* Colores (sacados del CV) */
     --negro:#000;
     --noche:#14172e;
     --lila:#7a5aa0;
     --lila-claro:#b9a1d6;
     --rosa:#e6a0c8;
     --bg-color:#ececf0;
-/* Fuentes */
     --cursiva:"Great Vibes", cursive;
     --elegante:"Cormorant Garamond", serif;
-    --main-font:"Lato", sans-serif;
-}
+    --main-font:"Lato", sans-serif;}
 *{
     border: 0;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-}
-html{
-    scroll-behavior: smooth;
-}
+    padding: 0;}
+html{scroll-behavior: smooth;}
 body{
     background-color: var(--bg-color);
     background-image:
@@ -30,21 +24,13 @@ body{
     background-attachment: fixed;
     color: var(--noche);
     font-family: var(--main-font);
-    line-height: 1.5;
-}
-img{
-    max-width: 100%;
-}
-section{
-    scroll-margin-top: 5em;
-}
+    line-height: 1.5;}
+img{max-width: 100%;}
+section{scroll-margin-top: 5em;}
 a:focus-visible,
 button:focus-visible{
     outline: 3px solid var(--lila);
-    outline-offset: 3px;
-}
-
-/* ---------- Encabezado ---------- */
+    outline-offset: 3px;}
 header{
     align-items: center;
     background: rgba(236,236,240,.85);
@@ -56,21 +42,18 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10;
-}
+    z-index: 10;}
 header h1 a{
     color: var(--noche);
     font-family: var(--cursiva);
     font-size: 2.2rem;
     font-weight: 400;
-    text-decoration: none;
-}
+    text-decoration: none;}
 header nav ul{
     align-items: center;
     display: flex;
     gap: 2em;
-    list-style: none;
-}
+    list-style: none;}
 header nav a{
     color: var(--noche);
     font-family: var(--elegante);
@@ -78,8 +61,7 @@ header nav a{
     font-style: italic;
     font-weight: 600;
     position: relative;
-    text-decoration: none;
-}
+    text-decoration: none;}
 header nav a::after{
     background: linear-gradient(to right, var(--lila-claro), var(--rosa));
     bottom: -3px;
@@ -88,146 +70,115 @@ header nav a::after{
     left: 50%;
     position: absolute;
     transition: all .25s ease-in-out;
-    width: 0;
-}
+    width: 0;}
 header nav a:hover::after{
     left: -.5em;
-    width: calc(100% + 1em);
-}
+    width: calc(100% + 1em);}
 
-/* ---------- Títulos y frases ---------- */
 h2{
     color: var(--lila);
     font-family: var(--cursiva);
     font-size: 3.4rem;
     font-weight: 400;
     line-height: 1.1;
-    margin-bottom: .4em;
-}
+    margin-bottom: .4em;}
 section:not(#inicio){
     margin: 0 auto;
     max-width: 1200px;
-    padding: 4em 3em;
-}
+    padding: 4em 3em;}
 section:not(#inicio) blockquote{
-    color: var(--noche);
     font-family: var(--elegante);
     font-size: 1.6rem;
     font-style: italic;
     font-weight: 500;
     line-height: 1.3;
     margin-bottom: 1.5em;
-    max-width: 38em;
-}
-
-/* ---------- Inicio ---------- */
+    max-width: 38em;}
 #inicio{
     align-items: center;
     display: flex;
-    gap: clamp(2rem, 6vw, 5rem);
+    gap: clamp(1rem, 5vw, 4rem);
     justify-content: center;
     margin: 0 auto;
     max-width: 1200px;
     min-height: 100vh;
-    padding: 6em 3em 3em;
-}
-/* El arco con tu foto, como en el CV */
+    padding: 6em 2em 3em;}
 #inicio::before{
     aspect-ratio: 3 / 4;
     background: url(../img/profile.png) center top / cover no-repeat, var(--lila-claro);
-    border: 6px solid var(--negro);
-    border-radius: 999px 999px 0 0;
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 30px rgba(20,23,46,.25);
     content: "";
     flex: 0 0 auto;
-    outline: 2px solid var(--noche);
-    outline-offset: 10px;
-    width: min(340px, 32vw);
-}
+    width: clamp(110px, 30vw, 340px);}
 #inicio .texto{
+    flex: 1 1 0;
     max-width: 34em;
-}
+    min-width: 0;}
 #inicio h2{
     color: var(--noche);
-    font-size: clamp(2.6rem, 5vw, 4.2rem);
-    line-height: .95;
-    margin-bottom: .2em;
-}
+    font-size: clamp(2rem, 5.5vw, 4.2rem);
+    line-height: 1;
+    margin-bottom: .2em;}
 .subtitulo{
     border-bottom: 2px solid var(--noche);
     color: var(--lila);
     font-family: var(--elegante);
-    font-size: 1.6rem;
+    font-size: clamp(.95rem, 2.4vw, 1.5rem);
     font-style: italic;
     font-weight: 600;
-    margin-bottom: 1em;
-    padding-bottom: .3em;
-}
-#inicio .texto p{
-    margin-bottom: 1.2em;
-}
+    margin-bottom: .8em;
+    padding-bottom: .3em;}
+#inicio .texto p:not(.subtitulo){
+    font-size: clamp(.85rem, 1.8vw, 1.05rem);
+    margin-bottom: 1em;}
 #inicio .texto ul{
-    margin-top: 1.5em;
-}
-/* Íconos de redes en círculos rosa (sobreescribe los estilos en línea) */
+    flex-wrap: wrap;
+    margin-top: 1.2em;}
 #inicio .texto ul a{
     align-items: center;
     background: var(--rosa);
     border-radius: 50%;
     display: flex;
-    height: 44px;
+    height: 2.4rem;
     justify-content: center;
     transition: background .15s ease-in-out;
-    width: 44px;
-}
-#inicio .texto ul a:hover{
-    background: var(--lila);
-}
+    width: 2.4rem;}
+#inicio .texto ul a:hover{background: var(--lila);}
 #inicio .texto ul i{
     color: var(--noche) !important;
-    font-size: 1.3rem !important;
-}
+    font-size: 1.15rem !important;}
 #inicio .texto ul a:hover i{
-    color: #fff !important;
-}
+    color: #fff !important;}
 
-/* ---------- Botones ---------- */
 .boton{
     border-radius: 2em;
     display: inline-block;
     font-weight: 700;
     padding: .75em 1.5em;
     text-decoration: none;
-    transition: all .15s ease-in-out;
-}
+    transition: all .15s ease-in-out;}
 .boton.btn-primario{
     background-color: var(--lila);
     border: 2px solid transparent;
-    color: #fff;
-}
+    color: #fff;}
 .boton.btn-primario:hover{
     background-color: var(--rosa);
-    color: var(--negro);
-}
+    color: var(--negro);}
 .boton.btn-secundario{
     background: transparent;
     border: 2px solid var(--rosa);
-    color: var(--rosa);
-}
+    color: var(--rosa);}
 .boton.btn-secundario:hover{
     background: var(--rosa);
-    color: var(--negro);
-}
+    color: var(--negro);}
 
-/* ---------- Tarjetas (panel negro como en el CV) ---------- */
 .cards{
     display: grid;
     gap: 2.5em;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    padding: 8px;
-}
-.cards.bloque-cards-2{
-    grid-template-columns: repeat(2, 1fr);
-}
+    padding: 8px;}
+.cards.bloque-cards-2{grid-template-columns: repeat(2, 1fr);}
 .card{
     background: var(--negro);
     border-radius: 1.2em;
@@ -236,19 +187,14 @@ section:not(#inicio) blockquote{
     flex-direction: column;
     outline: 2px solid var(--lila-claro);
     outline-offset: 6px;
-    overflow: hidden;
-}
+    overflow: hidden;}
 .card-imagen{
     height: 12em;
-    overflow: hidden;
-}
-.card-imagen.card-imagen-alta{
-    height: 18em;
-}
+    overflow: hidden;}
+.card-imagen.card-imagen-alta{height: 18em;}
 .card-info{
     flex-grow: 1;
-    padding: 1.4em 1.2em .8em;
-}
+    padding: 1.4em 1.2em .8em;}
 .card-titulo{
     color: var(--rosa);
     font-family: var(--elegante);
@@ -256,87 +202,90 @@ section:not(#inicio) blockquote{
     font-style: italic;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: .5rem;
-}
+    margin-bottom: .5rem;}
 .card-fecha{
     color: var(--lila-claro);
     font-size: .85rem;
-    margin-bottom: .8rem;
-}
+    margin-bottom: .8rem;}
 .card-info p{
     font-size: .95rem;
-    line-height: 1.4;
-}
+    line-height: 1.4;}
 .card > ul{
     justify-content: center;
-    padding: .5em 1em 1.4em;
-}
+    padding: .5em 1em 1.4em;}
 .card > ul i{
     color: var(--rosa) !important;
     font-size: 1.5rem !important;
-    transition: color .15s ease-in-out;
-}
-.card > ul a:hover i{
-    color: #fff !important;
-}
+    transition: color .15s ease-in-out;}
+.card > ul a:hover i{color: #fff !important;}
 
-/* ---------- Carrusel ---------- */
+/* Marketing: carrusel lateral con 3 tarjetas visibles (desde celular horizontal) */
+@media (min-width: 561px){
+    .cards.bloque-cards-3{
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding: 12px 10px 20px;
+        scroll-padding: 0 10px;
+        scroll-snap-type: x mandatory;
+        scrollbar-color: var(--lila-claro) transparent;
+        scrollbar-width: thin;
+    }
+    .cards.bloque-cards-3 .card{
+        flex: 0 0 calc((100% - 3rem) / 3);
+        scroll-snap-align: start;
+    }
+}
+@media (min-width: 1280px){
+    .cards.bloque-cards-3 .card{
+        flex-basis: calc((100% - 4.5rem) / 4);
+    }
+}
 .carrusel{
     margin: 2rem auto;
     max-width: 1000px;
-    position: relative;
-}
+    position: relative;}
 .carrusel-pista{
     border-radius: 1.2em;
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-.carrusel-pista::-webkit-scrollbar{
-    display: none;
-}
+    scrollbar-width: none;}
+.carrusel-pista::-webkit-scrollbar{display: none;}
 .slide{
     align-items: center;
     background: var(--negro);
     color: #fff;
     display: grid;
     flex: 0 0 100%;
-    gap: 2rem;
-    grid-template-columns: 1fr 1.2fr;
-    padding: 2.5rem 2.5rem 0;
-    scroll-snap-align: start;
-}
+    gap: clamp(1rem, 3vw, 2rem);
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    padding: clamp(1rem, 3vw, 2.5rem);
+    scroll-snap-align: start;}
 .slide img{
-    align-self: end;
-    aspect-ratio: 3 / 4;
-    border-radius: 999px 999px 0 0;
-    margin: 0 auto;
-    object-fit: cover;
-    width: min(100%, 320px);
-}
+    border-radius: 1rem;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    width: 100%;}
 .slide-info{
     display: flex;
     flex-direction: column;
-    gap: .8rem;
-    padding-bottom: 2.5rem;
-}
+    gap: .6rem;
+    min-width: 0;}
 .slide-info h3{
     color: var(--rosa);
     font-family: var(--elegante);
-    font-size: 2.2rem;
+    font-size: clamp(1.3rem, 3.6vw, 2.2rem);
     font-style: italic;
     font-weight: 700;
-    line-height: 1.05;
-}
-.slide-fecha{
-    color: var(--lila-claro);
-}
+    line-height: 1.05;}
+.slide-info p{font-size: clamp(.8rem, 1.7vw, 1rem);}
+.slide-fecha{color: var(--lila-claro);}
 .slide-info .boton{
     align-self: flex-start;
-    margin-top: .5rem;
-}
+    margin-top: .4rem;}
 .carrusel-btn{
     background: var(--rosa);
     border-radius: 50%;
@@ -348,15 +297,10 @@ section:not(#inicio) blockquote{
     top: 50%;
     transform: translateY(-50%);
     width: 44px;
-    z-index: 2;
-}
-.carrusel-btn:hover{
-    background: var(--lila-claro);
-}
+    z-index: 2;}
+.carrusel-btn:hover{background: var(--lila-claro);}
 #prev{ left: -22px; }
 #next{ right: -22px; }
-
-/* ---------- Pie ---------- */
 footer{
     align-items: center;
     background: var(--negro);
@@ -365,17 +309,66 @@ footer{
     gap: 1.5em;
     height: 5em;
     justify-content: center;
-    padding: 1em;
-}
-footer a{
-    color: var(--lila-claro);
+    padding: 1em;}
+footer a{color: var(--lila-claro);}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Flechas debajo del carrusel en pantallas medianas y chicas */
+@media (max-width: 1024px){
+    .carrusel{
+        margin-bottom: 4.5rem;
+    }
+    .carrusel-btn{
+        bottom: -3.4rem;
+        top: auto;
+        transform: none;
+    }
+    #prev{ left: calc(50% - 52px); }
+    #next{ right: calc(50% - 52px); }
 }
 
-/* ---------- Celulares y tablets verticales ---------- */
-@media (max-width: 700px){
-    body{
-        font-size: 15px;
+/* Tablet vertical: inicio sin tanto aire */
+@media (min-width: 561px) and (max-width: 1024px) and (orientation: portrait){
+    #inicio{
+        min-height: auto;
+        padding: 8em 2.5em 4em;
     }
+    #inicio::before{
+        width: 38vw;
+    }
+    #inicio h2{
+        font-size: clamp(2.8rem, 7vw, 4rem);
+    }
+    #inicio .texto p:not(.subtitulo){
+        font-size: 1.1rem;
+    }
+    .subtitulo{
+        font-size: 1.5rem;
+    }
+}
+
+/* Tarjetas más compactas cuando van 3 en pantallas medianas */
+@media (min-width: 561px) and (max-width: 900px){
+    .card-info{
+        padding: 1em .8em .5em;
+    }
+    .card-titulo{
+        font-size: 1.15rem;
+    }
+    .card-fecha{
+        font-size: .7rem;
+    }
+    .card-info p{
+        font-size: .78rem;
+    }
+    .card > ul i{
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Celular vertical */
+@media (max-width: 560px){
     header{
         flex-direction: column;
         gap: .2em;
@@ -392,37 +385,72 @@ footer a{
         font-size: 1.1rem;
     }
     h2{
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
     section:not(#inicio){
         padding: 3em 1.2em;
     }
     section:not(#inicio) blockquote{
-        font-size: 1.35rem;
+        font-size: 1.3rem;
     }
     #inicio{
-        flex-direction: column;
-        padding: 7.5em 1.5em 2em;
+        align-items: center;
+        gap: 1rem;
+        min-height: auto;
+        padding: 7.5em 1rem 2.5em;
+    }
+    #inicio .boton{
+        font-size: .85rem;
+        padding: .5em 1em;
+    }
+    .slide-info .boton{
+        font-size: .8rem;
+        padding: .45em 1em;
+    }
+    .carrusel-btn{
+        height: 40px;
+        width: 40px;
+    }
+}
+
+/* Celular muy chico */
+@media (max-width: 400px){
+    header nav ul{
+        gap: .7em;
+    }
+    header nav a{
+        font-size: 1rem;
+    }
+    #inicio h2{
+        font-size: 1.8rem;
+    }
+}
+
+/* Celular acostado (poca altura) */
+@media (max-height: 500px) and (orientation: landscape){
+    header{
+        position: static;
+    }
+    #inicio{
+        min-height: auto;
+        padding: 2em 2em;
     }
     #inicio::before{
-        width: 65vw;
+        width: min(26vw, 50vh);
     }
-    .cards.bloque-cards-2{
-        grid-template-columns: 1fr;
+    h2{
+        font-size: 2.4rem;
     }
-    .slide{
-        grid-template-columns: 1fr;
-        padding: 2rem 1.5rem 0;
+}
+
+/* Pantallas grandes */
+@media (min-width: 1600px){
+    body{
+        font-size: 18px;
     }
-    .slide img{
-        order: 2;
-        width: min(100%, 260px);
+    .carrusel{
+        max-width: 1150px;
     }
-    .slide-info{
-        padding-bottom: 0;
-    }
-    #prev{ left: 6px; }
-    #next{ right: 6px; }
 }
 @media (prefers-reduced-motion: reduce){
     html, .carrusel-pista{
